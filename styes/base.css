@@ -39,7 +39,7 @@ nav a:hover {
 }
 
 main {
-  max-width: 900px;
+  max-width: 950px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
@@ -47,7 +47,7 @@ main {
 .card {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
   padding: 1.5rem;
 }
@@ -59,61 +59,62 @@ main {
   margin-bottom: 1rem;
 }
 
-/* ===== ABOUT SECTION (SYMMETRICAL & CLEAN) ===== */
+/* ===== ABOUT SECTION LAYOUT ===== */
 .about .content {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* Shared section layout */
-.about .flag-section,
-.about .profile-section {
-  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
-  gap: 1.2rem;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: relative;
   padding: 1rem 0;
+  border-top: 2px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0;
 }
 
-/* Divider */
-.about hr {
-  border: none;
-  border-top: 1px solid #ccc;
-  margin: 0.5rem 0;
+/* Left side (flag + small caption) */
+.about figure {
+  flex: 1 1 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-/* Image styling */
-.about .flag-section img,
-.about .profile-section img {
-  width: 110px;
-  height: 110px;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+.about figure img {
+  max-width: 140px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* Profile circular */
-.about .profile-section img {
+.about figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.4rem;
+}
+
+/* Center text info */
+.about .text {
+  flex: 1 1 55%;
+  text-align: left;
+}
+
+/* Right side (profile photo) */
+.about .profile {
+  flex: 1 1 20%;
+  max-width: 220px;
   border-radius: 50%;
-}
-
-/* Info text */
-.about .info {
-  flex: 1;
-  font-size: 1rem;
-  color: #333;
-}
-
-.about .info p {
-  margin: 0.3rem 0;
-  line-height: 1.5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  display: block;
+  margin: 0 auto;
 }
 
 /* ===== RESOURCES ===== */
 .resources ul {
   list-style-type: none;
   padding-left: 0;
+  margin: 0;
 }
 
 .resources li {
@@ -138,4 +139,22 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
   margin-top: 3rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 800px) {
+  .about .content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about figure,
+  .about .text,
+  .about .profile {
+    flex: 1 1 100%;
+  }
+
+  .about .profile {
+    margin-top: 1rem;
+  }
 }
