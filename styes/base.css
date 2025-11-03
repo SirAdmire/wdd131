@@ -1,4 +1,8 @@
 /* ===== GENERAL ===== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -38,6 +42,11 @@ nav a:hover {
   text-decoration: underline;
 }
 
+nav a:focus {
+  outline: 2px dashed #ffcc00;
+  outline-offset: 4px;
+}
+
 main {
   max-width: 950px;
   margin: 2rem auto;
@@ -50,6 +59,11 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
   padding: 1.5rem;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
 }
 
 .card h2 {
@@ -129,6 +143,11 @@ main {
 .resources a:hover {
   color: #ff6600;
   text-decoration: underline;
+}
+
+.resources a:focus {
+  outline: 2px dashed #ffcc00;
+  outline-offset: 4px;
 }
 
 /* ===== FOOTER ===== */
