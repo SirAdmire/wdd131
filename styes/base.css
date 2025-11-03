@@ -11,6 +11,59 @@ body {
   line-height: 1.6;
 }
 
+/* Explicit structural rules */
+header {
+  display: block;
+}
+
+main {
+  display: block;
+}
+
+footer {
+  display: block;
+}
+
+/* ===== FLEXBOX USAGE ===== */
+.about .content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: relative;
+  padding: 1rem 0;
+  border-top: 2px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* ===== GRID USAGE ===== */
+.resources ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* ===== HOVER USAGE ===== */
+.card:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
+}
+
+.resources a:hover {
+  color: #ff6600;
+  text-decoration: underline;
+}
+
+header h1:hover {
+  color: #ffcc00;
+  cursor: pointer;
+}
+
+/* ===== HEADER ===== */
 header {
   background-color: #003366;
   color: #fff;
@@ -47,23 +100,20 @@ nav a:focus {
   outline-offset: 4px;
 }
 
+/* ===== MAIN ===== */
 main {
   max-width: 950px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
+/* ===== CARD ===== */
 .card {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
   padding: 1.5rem;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  transition: transform 0.3s ease;
 }
 
 .card h2 {
@@ -74,19 +124,6 @@ main {
 }
 
 /* ===== ABOUT SECTION LAYOUT ===== */
-.about .content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  position: relative;
-  padding: 1rem 0;
-  border-top: 2px solid #e0e0e0;
-  border-bottom: 2px solid #e0e0e0;
-}
-
-/* Left side (flag + small caption) */
 .about figure {
   flex: 1 1 20%;
   display: flex;
@@ -108,13 +145,11 @@ main {
   margin-top: 0.4rem;
 }
 
-/* Center text info */
 .about .text {
   flex: 1 1 55%;
   text-align: left;
 }
 
-/* Right side (profile photo) */
 .about .profile {
   flex: 1 1 20%;
   max-width: 220px;
@@ -125,12 +160,6 @@ main {
 }
 
 /* ===== RESOURCES ===== */
-.resources ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-}
-
 .resources li {
   margin: 0.4rem 0;
 }
@@ -138,11 +167,6 @@ main {
 .resources a {
   color: #003366;
   text-decoration: none;
-}
-
-.resources a:hover {
-  color: #ff6600;
-  text-decoration: underline;
 }
 
 .resources a:focus {
