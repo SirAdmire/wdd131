@@ -1,0 +1,130 @@
+/* General Styles */
+:root {
+    /* Define your own color scheme here */
+    --primary-color: #4b0082; /* Indigo/Purple Example */
+    --secondary-color: #f7f7f7;
+    --text-color: #333;
+    --light-text: #fff;
+    --hover-color: #8a2be2; /* Blue-Violet Example */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Use your Google Font */
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+/* Mobile: Hamburger Button Visible, Menu is initially hidden */
+#menu {
+    font-size: 1.5rem;
+    color: var(--light-text);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* The 'show' class is toggled by JavaScript */
+.navigation {
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    background-color: var(--primary-color);
+    z-index: 10;
+}
+
+.navigation.show {
+    display: flex;
+}
+
+.navigation a {
+    display: block;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    color: var(--light-text);
+    text-align: center;
+    border-top: 1px solid var(--hover-color);
+}
+
+.navigation a:hover {
+    background-color: var(--hover-color);
+}
+
+/* Change icon from default to 'X' when menu is open */
+#menu::before {
+    content: '≡'; /* Hamburger symbol */
+}
+
+#menu.open::before {
+    content: 'X'; /* Close symbol */
+}
+
+/* --- Main Content --- */
+main {
+    max-width: 800px; /* Limit width */
+    margin: 0 auto; /* Center horizontally */
+    padding: 1rem;
+}
+
+main h2 {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+/* CSS Grid for Mobile (Single Column) */
+.temple-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 1rem;
+}
+
+figure {
+    text-align: center;
+    margin: 0;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    color: var(--primary-color);
+    padding: 0.5rem 0;
+    font-style: italic;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+}
