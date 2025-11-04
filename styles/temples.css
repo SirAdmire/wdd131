@@ -1,11 +1,11 @@
-/* General Styles */
+
 :root {
-    /* Define your own color scheme here */
-    --primary-color: #4b0082; /* Indigo/Purple Example */
+    
+    --primary-color: #4b0082; 
     --secondary-color: #f7f7f7;
     --text-color: #333;
     --light-text: #fff;
-    --hover-color: #8a2be2; /* Blue-Violet Example */
+    --hover-color: #8a2be2; 
 }
 
 * {
@@ -15,12 +15,16 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif; /* Use your Google Font */
+    font-family: 'Roboto', sans-serif; 
     color: var(--text-color);
     background-color: var(--secondary-color);
 }
 
-/* --- Header & Navigation --- */
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     background-color: var(--primary-color);
     color: var(--light-text);
@@ -34,7 +38,7 @@ header h1 {
     font-size: 1.5rem;
 }
 
-/* Mobile: Hamburger Button Visible, Menu is initially hidden */
+
 #menu {
     font-size: 1.5rem;
     color: var(--light-text);
@@ -43,13 +47,12 @@ header h1 {
     cursor: pointer;
 }
 
-/* The 'show' class is toggled by JavaScript */
 .navigation {
-    display: none; /* Hidden by default on mobile */
+    display: none; 
     flex-direction: column;
     width: 100%;
     position: absolute;
-    top: 60px; /* Adjust based on header height */
+    top: 60px; 
     left: 0;
     background-color: var(--primary-color);
     z-index: 10;
@@ -80,19 +83,19 @@ header h1 {
     background-color: var(--hover-color);
 }
 
-/* Change icon from default to 'X' when menu is open */
+
 #menu::before {
-    content: '≡'; /* Hamburger symbol */
+    content: '≡'; 
 }
 
 #menu.open::before {
-    content: 'X'; /* Close symbol */
+    content: 'X'; 
 }
 
-/* --- Main Content --- */
+
 main {
-    max-width: 800px; /* Limit width */
-    margin: 0 auto; /* Center horizontally */
+    max-width: 800px; 
+    margin: 0 auto; 
     padding: 1rem;
 }
 
@@ -101,10 +104,10 @@ main h2 {
     margin: 1.5rem 0;
 }
 
-/* CSS Grid for Mobile (Single Column) */
+
 .temple-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Single column for mobile */
+    grid-template-columns: 1fr; 
     gap: 1rem;
 }
 
@@ -127,7 +130,6 @@ figcaption {
     font-style: italic;
 }
 
-/* --- Footer --- */
 footer {
     background-color: var(--primary-color);
     color: var(--light-text);
@@ -137,3 +139,4 @@ footer {
     font-size: 0.85rem;
 
 }
+
